@@ -3,112 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Stomata VR Explorer</title>
+<title>Stomata VR</title>
 
 <style>
 
-*{
+html,body{
 margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-body{
-overflow:hidden;
-background:black;
-font-family:Arial,sans-serif;
-height:100vh;
-width:100vw;
-}
-
-/* Fullscreen model */
-
-.viewer{
-
-position:absolute;
 width:100%;
 height:100%;
+overflow:hidden;
+background:black;
+}
+
+.viewer{
+position:fixed;
 top:0;
 left:0;
-
+width:100%;
+height:100%;
 }
 
 .viewer iframe{
-
 width:100%;
 height:100%;
 border:none;
-
-}
-
-
-/* Floating title */
-
-.title{
-
-position:absolute;
-top:20px;
-left:50%;
-
-transform:translateX(-50%);
-
-color:white;
-font-size:30px;
-font-weight:bold;
-
-z-index:100;
-
-padding:10px 20px;
-
-border-radius:15px;
-
-background:rgba(0,0,0,.4);
-
-backdrop-filter:blur(5px);
-
-text-shadow:0 0 10px black;
-
-}
-
-
-/* Mobile */
-
-@media(max-width:768px){
-
-.title{
-
-font-size:20px;
-
-}
-
 }
 
 </style>
-
 </head>
 
 <body>
 
-<div class="title">
-🌱 Stomata VR Explorer
-</div>
-
 <div class="viewer">
 
 <iframe
+src="https://sketchfab.com/models/00ffda2fc813426a9852abe6350332ca/embed?
+autostart=1
+&preload=1
+&autospin=1
+&autospin_delay=0
+&ui_controls=0
+&ui_infos=0
+&ui_stop=0
+&ui_watermark=0
+&transparent=1
+&dnt=1"
 
-src="https://sketchfab.com/models/00ffda2fc813426a9852abe6350332ca/embed?autostart=1&autospin=0.2&preload=1&camera=0&ui_controls=0&ui_infos=0&ui_stop=0&ui_watermark=0"
-
-allow="autoplay;
+allow="
+autoplay;
 fullscreen;
 xr-spatial-tracking;
-vr;
 gyroscope;
 accelerometer;
-execution-while-out-of-viewport;
-execution-while-not-rendered;
-web-share">
-
+vr;
+">
 </iframe>
 
 </div>
