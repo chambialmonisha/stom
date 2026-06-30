@@ -3,113 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VR Stomata Model</title>
+<title>Stomata VR Explorer</title>
 
 <style>
 
-body{
+*{
 margin:0;
-overflow:hidden;
-font-family:Arial,sans-serif;
-background:black;
+padding:0;
+box-sizing:border-box;
 }
 
-/* Background */
+body{
+overflow:hidden;
+background:black;
+font-family:Arial,sans-serif;
+height:100vh;
+width:100vw;
+}
 
-.background{
-position:fixed;
+/* Fullscreen model */
+
+.viewer{
+
+position:absolute;
 width:100%;
 height:100%;
-z-index:-1;
+top:0;
+left:0;
+
 }
 
-.background iframe{
+.viewer iframe{
+
 width:100%;
 height:100%;
 border:none;
+
 }
 
 
-/* Title */
+/* Floating title */
 
 .title{
+
 position:absolute;
 top:20px;
 left:50%;
+
 transform:translateX(-50%);
+
 color:white;
-font-size:32px;
+font-size:30px;
 font-weight:bold;
-text-shadow:0 0 10px black;
+
 z-index:100;
-}
 
+padding:10px 20px;
 
-/* Stomata container */
+border-radius:15px;
 
-.model-container{
-position:absolute;
-width:100%;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-}
+background:rgba(0,0,0,.4);
 
+backdrop-filter:blur(5px);
 
-/* Stomata box */
-
-.model-box{
-
-width:70%;
-height:75%;
-
-border-radius:20px;
-overflow:hidden;
-
-background:rgba(255,255,255,0.15);
-
-backdrop-filter:blur(10px);
-
-box-shadow:0 0 20px rgba(255,255,255,.5);
+text-shadow:0 0 10px black;
 
 }
 
 
-.model-box iframe{
-
-width:100%;
-height:100%;
-border:none;
-
-}
-
-
-.label{
-
-text-align:center;
-font-size:24px;
-color:white;
-padding:12px;
-background:rgba(0,0,0,.5);
-
-}
-
-
-/* Mobile responsive */
+/* Mobile */
 
 @media(max-width:768px){
 
-.model-box{
-
-width:95%;
-height:55%;
-
-}
-
 .title{
 
-font-size:24px;
+font-size:20px;
 
 }
 
@@ -121,39 +89,27 @@ font-size:24px;
 
 <body>
 
-<!-- Background -->
+<div class="title">
+🌱 Stomata VR Explorer
+</div>
 
-<div class="background">
+<div class="viewer">
 
 <iframe
-src="https://sketchfab.com/models/c062a59612bd40e2a56cbb3082448637/embed?autostart=1&ui_controls=0&ui_infos=0"
-allow="autoplay; fullscreen; xr-spatial-tracking">
+
+src="https://sketchfab.com/models/00ffda2fc813426a9852abe6350332ca/embed?autostart=1&autospin=0.2&preload=1&camera=0&ui_controls=0&ui_infos=0&ui_stop=0&ui_watermark=0"
+
+allow="autoplay;
+fullscreen;
+xr-spatial-tracking;
+vr;
+gyroscope;
+accelerometer;
+execution-while-out-of-viewport;
+execution-while-not-rendered;
+web-share">
+
 </iframe>
-
-</div>
-
-
-<div class="title">
-
-🌱 Stomata VR Explorer
-
-</div>
-
-
-<div class="model-container">
-
-    <div class="model-box">
-
-        <div class="label">
-            🌱 Stomata
-        </div>
-
-        <iframe
-        src="https://sketchfab.com/models/00ffda2fc813426a9852abe6350332ca/embed?autostart=1&ui_controls=0&ui_infos=0"
-        allow="autoplay; fullscreen; xr-spatial-tracking">
-        </iframe>
-
-    </div>
 
 </div>
 
